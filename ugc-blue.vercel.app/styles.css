@@ -623,26 +623,15 @@ h1, h2, h3, h4, h5, h6 {
     100% { transform: translateX(-80px) translateY(-80px); }
 }
 
-.testimonial-carousel {
-    position: relative;
-    max-width: 600px;
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    flex-shrink: 0;
+.testimonial-card {
     background: linear-gradient(135deg, 
         rgba(255, 255, 255, 0.85) 0%, 
         rgba(245, 245, 220, 0.8) 30%, 
@@ -660,87 +649,23 @@ h1, h2, h3, h4, h5, h6 {
         0 12px 48px rgba(0, 0, 0, 0.12),
         0 24px 96px rgba(139, 69, 19, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.5);
-    opacity: 0;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.carousel-slide.active {
     opacity: 1;
 }
 
-.carousel-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 10;
+.testimonial-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 60px rgba(139, 69, 19, 0.15),
+        0 30px 120px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    border-image: linear-gradient(135deg, 
+        rgba(139, 69, 19, 0.3) 0%, 
+        rgba(205, 133, 63, 0.4) 50%, 
+        rgba(139, 69, 19, 0.3) 100%) 1;
 }
 
-.carousel-btn {
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.8) 0%, 
-        rgba(245, 245, 220, 0.6) 100%);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    pointer-events: all;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-btn:hover {
-    background: linear-gradient(135deg, 
-        var(--primary-color) 0%, 
-        var(--primary-dark) 100%);
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.25);
-}
-
-.carousel-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-xs);
-    margin-top: var(--spacing-md);
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(139, 69, 19, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dot.active {
-    background-color: var(--primary-color);
-    transform: scale(1.2);
-}
-
-.dot:hover {
-    background-color: var(--primary-color);
-    transform: scale(1.1);
-}
+/* Removed carousel navigation styles - no longer needed */
 
 .portrait-image {
     width: 100%;
@@ -1328,14 +1253,8 @@ details[open] .faq-question::after {
         font-size: 3.5rem;
     }
     
-    .portraits-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .carousel-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.5rem;
+    .testimonials-grid {
+        grid-template-columns: 1fr;
     }
     
     .cta-title {
