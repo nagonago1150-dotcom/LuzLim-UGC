@@ -558,6 +558,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: var(--spacing-xs);
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
     animation: pulse-number 2s ease-in-out infinite;
+    white-space: nowrap;
 }
 
 @keyframes pulse-number {
