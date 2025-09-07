@@ -1022,14 +1022,15 @@ details[open] .faq-question::after {
 .benefit-item {
     display: flex;
     align-items: center;
-    gap: var(--spacing-xs);
+    justify-content: center;
     color: white;
     font-weight: 500;
     font-size: 1.1rem;
-}
-
-.benefit-icon {
-    font-size: 1.5rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .cta-button-mega {
@@ -1113,27 +1114,13 @@ details[open] .faq-question::after {
     color: #ffcccb;
     font-size: 1rem;
     font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
+    text-align: center;
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
-}
-
-.urgency-icon {
-    font-size: 1.2rem;
-    animation: swing 1s infinite;
-}
-
-@keyframes swing {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(5deg); }
-    75% { transform: rotate(-5deg); }
 }
 
 /* Modal */
