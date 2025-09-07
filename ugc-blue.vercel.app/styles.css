@@ -51,6 +51,11 @@ body {
     -webkit-backdrop-filter: blur(20px);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Container */
@@ -140,14 +145,16 @@ h1, h2, h3, h4, h5, h6 {
         var(--background-white) 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease-in-out infinite;
-    padding: var(--spacing-lg) 0;
+    padding: 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .hero::before {
@@ -185,23 +192,29 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 100%;
     width: 100%;
-    margin: 0;
-    padding: 0 var(--spacing-sm);
-    min-height: 80vh;
+    max-width: none;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    min-height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
 }
 
 .hero-content {
     text-align: center;
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
     margin: 0 auto;
+    position: relative;
 }
 
 .hero-title {
@@ -301,6 +314,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
+    .hero-container {
+        padding: var(--spacing-md);
+        width: calc(100% - 32px);
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
     .hero-product-image {
         max-width: 140px;
     }
@@ -1251,18 +1278,18 @@ details[open] .faq-question::after {
 /* Responsive Design */
 @media (min-width: 768px) {
     .hero-container {
-        max-width: 100%;
-        padding: 0 var(--spacing-lg);
+        padding: var(--spacing-xl);
+        width: 100%;
     }
     
     .hero-content {
         text-align: center;
-        max-width: 900px;
+        max-width: 700px;
         margin: 0 auto;
     }
     
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.2rem;
     }
     
     .hero-product-image {
@@ -1348,8 +1375,16 @@ details[open] .faq-question::after {
 }
 
 @media (min-width: 1024px) {
+    .hero-container {
+        padding: var(--spacing-xxl);
+    }
+    
+    .hero-content {
+        max-width: 800px;
+    }
+    
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 3.8rem;
     }
     
     .section-title {
