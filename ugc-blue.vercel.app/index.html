@@ -126,7 +126,7 @@
                 
             </div>
             <div class="hero-image">
-                <img src="luzlim-bottle.png" alt="LuzLimフェムケアソープ" loading="eager">
+                <img src="luzlim-bottle.png" alt="LuzLimフェムケアソープ - 高画質な濃密泡とボトル" loading="eager">
             </div>
         </div>
     </section>
@@ -153,9 +153,11 @@
     <section class="user-portraits" id="user-portraits">
         <div class="container">
             <h2 class="section-title">お客様の声</h2>
-            <div class="portraits-grid">
-                <!-- Portrait 1: 田中佳子さん -->
-                <article class="portrait-card">
+            <div class="testimonial-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <!-- Portrait 1: 田中佳子さん -->
+                        <article class="carousel-slide active">
                     <div class="portrait-content">
                         <h3 class="portrait-name">20代女性</h3>
                         <p class="portrait-quote">
@@ -171,8 +173,8 @@
                     </div>
                 </article>
 
-                <!-- Portrait 2: 佐藤美香さん -->
-                <article class="portrait-card">
+                        <!-- Portrait 2: 佐藤美香さん -->
+                        <article class="carousel-slide">
                     <div class="portrait-content">
                         <h3 class="portrait-name">佐藤美香さん（29歳）</h3>
                         <p class="portrait-quote">
@@ -189,8 +191,8 @@
                     </div>
                 </article>
 
-                <!-- Portrait 3: 鈴木ゆかりさん -->
-                <article class="portrait-card">
+                        <!-- Portrait 3: 鈴木ゆかりさん -->
+                        <article class="carousel-slide">
                     <div class="portrait-content">
                         <h3 class="portrait-name">40代女性</h3>
                         <p class="portrait-quote">
@@ -204,8 +206,22 @@
                             詳しく読む
                         </button>
                     </div>
-                </article>
-
+                        </article>
+                    </div>
+                    
+                    <!-- Carousel Navigation -->
+                    <div class="carousel-nav">
+                        <button class="carousel-btn prev-btn" aria-label="前の口コミ">‹</button>
+                        <button class="carousel-btn next-btn" aria-label="次の口コミ">›</button>
+                    </div>
+                    
+                    <!-- Carousel Dots -->
+                    <div class="carousel-dots">
+                        <button class="dot active" data-slide="0" aria-label="1つ目の口コミ"></button>
+                        <button class="dot" data-slide="1" aria-label="2つ目の口コミ"></button>
+                        <button class="dot" data-slide="2" aria-label="3つ目の口コミ"></button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -257,15 +273,50 @@
     <!-- CTA Section -->
     <section class="cta-section" id="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <div class="cta-info">
-                    <p class="cta-price">初回特別価格¥1,980（税込・送料無料）</p>
+            <div class="cta-hero">
+                <div class="cta-badge">
+                    <span class="badge-text">限定特価</span>
                 </div>
-                <a href="https://shop.salus-inc.com/lp?u=ts_test_250716_LCP_LUZLIM_SD" class="cta-button bottom" aria-label="LuzLimを購入する">
-                    今すぐLuzLimを始める
+                <h2 class="cta-title">
+                    今すぐ始める<br>
+                    <span class="cta-highlight">LuzLim</span>で快適ケア
+                </h2>
+                <div class="price-comparison">
+                    <div class="regular-price">
+                        <span class="price-label">通常価格</span>
+                        <span class="old-price">¥4,950</span>
+                    </div>
+                    <div class="special-price">
+                        <span class="price-label">初回特別価格</span>
+                        <span class="new-price">¥1,980</span>
+                        <span class="savings">3,000円OFF</span>
+                    </div>
+                </div>
+                <div class="cta-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🚚</span>
+                        <span>送料無料</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💯</span>
+                        <span>品質保証</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⚡</span>
+                        <span>即効実感</span>
+                    </div>
+                </div>
+                <a href="https://shop.salus-inc.com/lp?u=ts_test_250716_LCP_LUZLIM_SD" class="cta-button-mega" aria-label="LuzLimを購入する">
+                    <span class="button-text">今すぐLuzLimを始める</span>
+                    <span class="button-subtext">※税込・送料無料</span>
                 </a>
+                <div class="urgency-text">
+                    <span class="urgency-icon">⏰</span>
+                    この特別価格は今だけ！お見逃しなく
+                </div>
             </div>
         </div>
+        <div class="cta-decoration"></div>
     </section>
 
     <!-- Modal for detailed reviews -->
