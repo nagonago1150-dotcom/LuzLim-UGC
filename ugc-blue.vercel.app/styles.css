@@ -6,17 +6,19 @@
 }
 
 :root {
-    /* Color Palette - Natural and Gentle */
-    --primary-color: #8B4513;
-    --primary-dark: #654321;
-    --secondary-color: #F5F5DC;
-    --accent-color: #CD853F;
-    --text-dark: #333333;
-    --text-light: #666666;
-    --background-light: #FAFAF8;
+    /* Color Palette - Warm Pink Beige Inspired */
+    --primary-color: #D4A574;
+    --primary-dark: #B8956A;
+    --secondary-color: #F8F0E8;
+    --accent-color: #E6B887;
+    --gold-accent: #F4C430;
+    --text-dark: #8B7355;
+    --text-light: #A68B5B;
+    --background-light: #F5EDE6;
     --background-white: #FFFFFF;
-    --border-color: #E5E5E5;
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --background-pink: #F9F2ED;
+    --border-color: #E8DDD4;
+    --shadow-color: rgba(180, 149, 106, 0.15);
     
     /* Typography */
     --font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ', sans-serif;
@@ -44,9 +46,10 @@ body {
     line-height: var(--line-height-base);
     color: var(--text-dark);
     background: linear-gradient(135deg, 
-        rgba(250, 250, 248, 0.95) 0%,
-        rgba(245, 245, 220, 0.9) 50%,
-        rgba(250, 250, 248, 0.95) 100%);
+        var(--background-pink) 0%,
+        rgba(248, 240, 232, 0.95) 30%,
+        var(--background-light) 70%,
+        var(--background-pink) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     -webkit-font-smoothing: antialiased;
@@ -138,11 +141,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, 
-        var(--background-white) 0%, 
-        #f8f6f3 25%, 
-        var(--secondary-color) 50%, 
-        #f5f3f0 75%, 
-        var(--background-white) 100%);
+        var(--background-pink) 0%, 
+        var(--secondary-color) 25%, 
+        var(--background-light) 50%, 
+        var(--secondary-color) 75%, 
+        var(--background-pink) 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease-in-out infinite;
     padding: var(--spacing-xxl) 0;
@@ -398,10 +401,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Rating Stats Section */
 .rating-stats {
     background: linear-gradient(45deg, 
-        var(--background-white) 0%, 
-        #faf9f7 30%, 
-        var(--secondary-color) 60%, 
-        var(--background-white) 100%);
+        var(--background-light) 0%, 
+        var(--secondary-color) 30%, 
+        var(--background-pink) 60%, 
+        var(--background-light) 100%);
     background-size: 300% 300%;
     animation: statsGradient 12s ease-in-out infinite;
     padding: var(--spacing-xxl) 0;
@@ -565,12 +568,12 @@ h1, h2, h3, h4, h5, h6 {
 .stat-number {
     font-size: 3.5rem;
     font-weight: 800;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--gold-accent) 50%, var(--accent-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: var(--spacing-xs);
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 3px 3px 6px rgba(180, 149, 106, 0.2);
     animation: pulse-number 2s ease-in-out infinite;
     white-space: nowrap;
     line-height: 1.2;
@@ -599,11 +602,11 @@ h1, h2, h3, h4, h5, h6 {
 /* User Portraits Section - Carousel */
 .user-portraits {
     background: linear-gradient(-45deg, 
-        var(--background-light) 0%, 
-        #f7f5f2 25%, 
-        #f3f1ee 50%, 
-        var(--background-light) 75%, 
-        #faf8f5 100%);
+        var(--secondary-color) 0%, 
+        var(--background-pink) 25%, 
+        var(--background-light) 50%, 
+        var(--secondary-color) 75%, 
+        var(--background-pink) 100%);
     background-size: 400% 400%;
     animation: portraitsGradient 18s ease-in-out infinite;
     padding: var(--spacing-xxl) 0;
@@ -745,12 +748,12 @@ h1, h2, h3, h4, h5, h6 {
 /* FAQ Section */
 .faq {
     background: linear-gradient(90deg, 
-        var(--background-white) 0%, 
-        #faf9f7 20%, 
-        var(--secondary-color) 40%, 
-        #f8f6f3 60%, 
-        #faf9f7 80%, 
-        var(--background-white) 100%);
+        var(--background-light) 0%, 
+        var(--secondary-color) 20%, 
+        var(--background-pink) 40%, 
+        var(--secondary-color) 60%, 
+        var(--background-light) 80%, 
+        var(--background-pink) 100%);
     background-size: 500% 100%;
     animation: faqGradient 20s ease-in-out infinite;
     padding: var(--spacing-xxl) 0;
@@ -851,7 +854,7 @@ details[open] .faq-question::after {
 
 /* CTA Section - Enhanced Design */
 .cta-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 50%, var(--gold-accent) 100%);
     padding: var(--spacing-xxl) 0;
     margin-top: var(--spacing-xxl);
     position: relative;
@@ -1036,22 +1039,22 @@ details[open] .faq-question::after {
 .cta-button-mega {
     display: inline-block;
     background: linear-gradient(135deg, 
-        #ffd93d 0%, 
-        #ffb347 25%, 
-        #ff9500 50%, 
-        #ffb347 75%, 
-        #ffd93d 100%);
+        var(--gold-accent) 0%, 
+        #F8C471 25%, 
+        #F5B041 50%, 
+        #F8C471 75%, 
+        var(--gold-accent) 100%);
     background-size: 300% 300%;
     animation: buttonGradient 4s ease-in-out infinite;
-    color: var(--primary-dark);
+    color: var(--text-dark);
     padding: var(--spacing-lg) var(--spacing-xl);
     border-radius: 60px;
     font-size: 1.3rem;
     font-weight: 800;
     text-decoration: none;
     box-shadow: 
-        0 12px 40px rgba(255, 153, 0, 0.4),
-        0 20px 80px rgba(0, 0, 0, 0.15),
+        0 12px 40px rgba(244, 196, 48, 0.4),
+        0 20px 80px rgba(180, 149, 106, 0.2),
         inset 0 2px 0 rgba(255, 255, 255, 0.5),
         inset 0 -2px 0 rgba(0, 0, 0, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
