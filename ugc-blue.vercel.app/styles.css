@@ -145,15 +145,14 @@ h1, h2, h3, h4, h5, h6 {
         var(--background-white) 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease-in-out infinite;
-    padding: 0;
+    padding: var(--spacing-xxl) 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    width: 100vw;
-    margin: 0;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -193,21 +192,18 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     text-align: center;
     width: 100%;
-    max-width: none;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-xxl) var(--spacing-sm);
     min-height: 100vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     box-sizing: border-box;
 }
 
 .hero-content {
     text-align: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -273,6 +269,9 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .hero-product-image img {
@@ -313,19 +312,18 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .hero-container {
-        padding: var(--spacing-md);
-        width: calc(100% - 32px);
+        padding: var(--spacing-lg) var(--spacing-sm);
+        max-width: 100%;
     }
     
     .hero-content {
         max-width: 100%;
-        width: 100%;
     }
     
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
     
     .hero-product-image {
@@ -334,14 +332,6 @@ h1, h2, h3, h4, h5, h6 {
     
     .hero-product-image img {
         max-width: 130px;
-    }
-    
-    .hero-image {
-        max-width: 280px;
-    }
-    
-    .hero-image img {
-        max-width: 260px;
     }
 }
 
@@ -1278,18 +1268,18 @@ details[open] .faq-question::after {
 /* Responsive Design */
 @media (min-width: 768px) {
     .hero-container {
-        padding: var(--spacing-xl);
-        width: 100%;
+        padding: var(--spacing-xxl) var(--spacing-lg);
+        max-width: 1200px;
     }
     
     .hero-content {
         text-align: center;
-        max-width: 700px;
+        max-width: 900px;
         margin: 0 auto;
     }
     
     .hero-title {
-        font-size: 3.2rem;
+        font-size: 3.5rem;
     }
     
     .hero-product-image {
@@ -1376,15 +1366,16 @@ details[open] .faq-question::after {
 
 @media (min-width: 1024px) {
     .hero-container {
-        padding: var(--spacing-xxl);
+        padding: var(--spacing-xxl) var(--spacing-lg);
+        max-width: 1200px;
     }
     
     .hero-content {
-        max-width: 800px;
+        max-width: 1000px;
     }
     
     .hero-title {
-        font-size: 3.8rem;
+        font-size: 4rem;
     }
     
     .section-title {
