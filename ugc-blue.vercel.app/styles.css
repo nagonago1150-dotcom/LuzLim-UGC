@@ -196,7 +196,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     padding: var(--spacing-xxl) var(--spacing-sm);
     min-height: 100vh;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     box-sizing: border-box;
 }
 
@@ -269,9 +272,6 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .hero-product-image img {
@@ -316,6 +316,12 @@ h1, h2, h3, h4, h5, h6 {
     .hero-container {
         padding: var(--spacing-lg) var(--spacing-sm);
         max-width: 100%;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     .hero-content {
@@ -1270,6 +1276,10 @@ details[open] .faq-question::after {
     .hero-container {
         padding: var(--spacing-xxl) var(--spacing-lg);
         max-width: 1200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     .hero-content {
@@ -1368,6 +1378,10 @@ details[open] .faq-question::after {
     .hero-container {
         padding: var(--spacing-xxl) var(--spacing-lg);
         max-width: 1200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     .hero-content {
