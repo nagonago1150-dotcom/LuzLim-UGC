@@ -693,6 +693,26 @@ h1, h2, h3, h4, h5, h6 {
         rgba(139, 69, 19, 0.3) 100%) 1;
 }
 
+.testimonial-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+    position: relative;
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    filter: brightness(1.1) contrast(1.05);
+}
+
+.testimonial-card:hover .testimonial-image img {
+    transform: scale(1.08);
+}
+
 /* Removed carousel navigation styles - no longer needed */
 
 .portrait-image {
