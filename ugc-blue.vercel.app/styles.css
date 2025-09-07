@@ -339,6 +339,15 @@ h1, h2, h3, h4, h5, h6 {
     .hero-product-image img {
         max-width: 130px;
     }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-item {
+        padding: var(--spacing-lg) var(--spacing-sm);
+        min-height: 160px;
+    }
 }
 
 .hero-image img {
@@ -490,7 +499,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .stat-item {
-    padding: var(--spacing-xl) var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-md);
     background: linear-gradient(135deg, 
         rgba(255, 255, 255, 0.8) 0%, 
         rgba(245, 245, 220, 0.7) 30%, 
@@ -506,11 +515,16 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 20px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 
         0 10px 40px rgba(0, 0, 0, 0.1),
         0 20px 80px rgba(139, 69, 19, 0.05),
         inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .stat-item::before {
@@ -549,7 +563,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .stat-number {
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 800;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
     -webkit-background-clip: text;
@@ -559,6 +573,9 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
     animation: pulse-number 2s ease-in-out infinite;
     white-space: nowrap;
+    line-height: 1.2;
+    text-align: center;
+    padding: 0 var(--spacing-sm);
 }
 
 @keyframes pulse-number {
