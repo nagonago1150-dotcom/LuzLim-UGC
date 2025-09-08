@@ -6,19 +6,19 @@
 }
 
 :root {
-    /* Color Palette - Warm Pink Beige Inspired */
-    --primary-color: #D4A574;
-    --primary-dark: #B8956A;
-    --secondary-color: #F8F0E8;
-    --accent-color: #E6B887;
-    --gold-accent: #F4C430;
-    --text-dark: #8B7355;
-    --text-light: #A68B5B;
-    --background-light: #F5EDE6;
+    /* Color Palette - Deep Luxurious Brown Inspired */
+    --primary-color: #8B4513;
+    --primary-dark: #5D2F02;
+    --secondary-color: #F2E8DC;
+    --accent-color: #A0522D;
+    --gold-accent: #DAA520;
+    --text-dark: #3E2723;
+    --text-light: #5D4037;
+    --background-light: #EFEBE6;
     --background-white: #FFFFFF;
-    --background-pink: #F9F2ED;
-    --border-color: #E8DDD4;
-    --shadow-color: rgba(180, 149, 106, 0.15);
+    --background-pink: #F4F0EB;
+    --border-color: #D7CCC8;
+    --shadow-color: rgba(62, 39, 35, 0.15);
     
     /* Typography */
     --font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ', sans-serif;
@@ -172,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23654321' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233E2723' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
     animation: patternMove 20s linear infinite;
     z-index: 1;
 }
@@ -847,7 +847,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-opacity='0.01'%3E%3Cpolygon fill='%23654321' points='50 0 60 40 100 50 60 60 50 100 40 60 0 50 40 40'/%3E%3C/g%3E%3C/svg%3E") repeat;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-opacity='0.01'%3E%3Cpolygon fill='%233E2723' points='50 0 60 40 100 50 60 60 50 100 40 60 0 50 40 40'/%3E%3C/g%3E%3C/svg%3E") repeat;
     animation: starTwinkle 15s linear infinite;
     z-index: 1;
 }
@@ -1112,7 +1112,7 @@ details[open] .faq-question::after {
 }
 
 .savings {
-    background: linear-gradient(45deg, #E74C3C, #F39C12);
+    background: linear-gradient(45deg, #5D2F02, #8B4513);
     color: white;
     padding: 4px 12px;
     border-radius: 20px;
@@ -1157,9 +1157,9 @@ details[open] .faq-question::after {
     display: inline-block;
     background: linear-gradient(135deg, 
         var(--gold-accent) 0%, 
-        #F8C471 25%, 
-        #F5B041 50%, 
-        #F8C471 75%, 
+        #A0522D 25%, 
+        #8B4513 50%, 
+        #A0522D 75%, 
         var(--gold-accent) 100%);
     background-size: 300% 300%;
     animation: buttonGradient 4s ease-in-out infinite;
