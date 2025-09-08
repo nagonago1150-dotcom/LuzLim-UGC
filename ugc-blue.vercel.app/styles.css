@@ -1345,7 +1345,6 @@ details[open] .faq-question::after {
     
     .hero-description {
         font-size: 1.6rem;
-        white-space: nowrap;
     }
     
     .hero-product-image {
@@ -1444,7 +1443,6 @@ details[open] .faq-question::after {
     
     .hero-description {
         font-size: 1.8rem;
-        white-space: nowrap;
     }
     
     .section-title {
