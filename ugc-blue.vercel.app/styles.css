@@ -207,9 +207,10 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 100vh;
     position: absolute;
     top: 50%;
-    left: 68%;
+    left: 50%;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .hero-content {
@@ -223,6 +224,9 @@ h1, h2, h3, h4, h5, h6 {
     gap: var(--spacing-lg);
     margin: 0 auto;
     position: relative;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .hero-title {
@@ -240,6 +244,11 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.01em;
     text-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     text-align: center;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .hero-subtitle {
@@ -271,6 +280,9 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     width: 100%;
     max-width: 700px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .hero-product-image {
@@ -329,8 +341,9 @@ h1, h2, h3, h4, h5, h6 {
         height: 100vh;
         position: absolute;
         top: 50%;
-        left: 63%;
+        left: 50%;
         transform: translate(-50%, -50%);
+        overflow-x: hidden;
     }
     
     .hero-content {
@@ -1335,7 +1348,7 @@ details[open] .faq-question::after {
         max-width: 1200px;
         position: absolute;
         top: 50%;
-        left: 68%;
+        left: 50%;
         transform: translate(-50%, -50%);
     }
     
@@ -1439,7 +1452,7 @@ details[open] .faq-question::after {
         max-width: 1200px;
         position: absolute;
         top: 50%;
-        left: 68%;
+        left: 50%;
         transform: translate(-50%, -50%);
     }
     
