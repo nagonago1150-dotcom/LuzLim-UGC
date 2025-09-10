@@ -307,22 +307,15 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 var(--spacing-md) 0;
     text-align: center;
     position: relative;
-    overflow: hidden;
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.1) 0%, 
-        rgba(245, 245, 220, 0.05) 100%);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    animation: heroDescriptionFloat 6s ease-in-out infinite;
-}
-
-@keyframes heroDescriptionFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
+        rgba(255, 255, 255, 0.6) 0%, 
+        rgba(245, 245, 220, 0.4) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(139, 69, 19, 0.1);
+    box-shadow: 
+        0 4px 20px rgba(139, 69, 19, 0.08),
+        0 8px 40px rgba(0, 0, 0, 0.05);
 }
 
 .hero-description {
@@ -347,65 +340,24 @@ h1, h2, h3, h4, h5, h6 {
         var(--primary-color) 0%, 
         var(--accent-color) 100%);
     color: white;
-    padding: 8px 16px;
-    border-radius: 25px;
+    padding: 6px 14px;
+    border-radius: 20px;
     font-weight: 600;
-    font-size: 0.9em;
-    box-shadow: 
-        0 4px 15px rgba(139, 69, 19, 0.3),
-        0 8px 30px rgba(0, 0, 0, 0.1);
-    transform: rotate(-1deg);
-    margin: 0 8px 8px 0;
-    animation: badgePulse 3s ease-in-out infinite;
+    font-size: 0.85em;
+    box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+    margin: 0 6px 6px 0;
     position: relative;
-    overflow: hidden;
-}
-
-.highlight-badge::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    animation: badgeShine 4s ease-in-out infinite;
-}
-
-@keyframes badgePulse {
-    0%, 100% { transform: rotate(-1deg) scale(1); }
-    50% { transform: rotate(-1deg) scale(1.05); }
-}
-
-@keyframes badgeShine {
-    0% { left: -100%; }
-    50% { left: 100%; }
-    100% { left: -100%; }
 }
 
 .feature-text {
     display: inline-block;
     color: var(--primary-dark);
     font-weight: 600;
-    background: linear-gradient(135deg, 
-        rgba(139, 69, 19, 0.1) 0%, 
-        rgba(160, 82, 45, 0.1) 100%);
-    padding: 4px 12px;
-    border-radius: 15px;
-    margin: 0 4px;
-    animation: featureGlow 4s ease-in-out infinite;
+    background: rgba(139, 69, 19, 0.08);
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin: 0 2px;
     position: relative;
-}
-
-@keyframes featureGlow {
-    0%, 100% { 
-        box-shadow: 0 0 5px rgba(139, 69, 19, 0.2); 
-        transform: translateY(0px);
-    }
-    50% { 
-        box-shadow: 0 0 15px rgba(139, 69, 19, 0.4); 
-        transform: translateY(-2px);
-    }
 }
 
 .problem-solve {
@@ -413,31 +365,14 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-dark);
     font-weight: 500;
     position: relative;
-    animation: problemFade 3s ease-in-out infinite;
-}
-
-@keyframes problemFade {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 1; }
 }
 
 .solution-text {
     display: inline-block;
-    background: linear-gradient(135deg, 
-        var(--gold-accent) 0%, 
-        var(--accent-color) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary-color);
     font-weight: 700;
-    font-size: 1.1em;
-    animation: solutionBounce 2s ease-in-out infinite;
+    font-size: 1.05em;
     position: relative;
-}
-
-@keyframes solutionBounce {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-3px) scale(1.02); }
 }
 
 .hero-product-image {
