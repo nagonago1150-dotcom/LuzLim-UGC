@@ -461,6 +461,17 @@ h1, h2, h3, h4, h5, h6 {
         font-size: clamp(0.95rem, 3vw, 1.1rem);
         line-height: 1.6;
     }
+    
+    .testimonial-disclaimer {
+        margin-top: var(--spacing-lg);
+        padding: var(--spacing-sm);
+        margin-left: var(--spacing-sm);
+        margin-right: var(--spacing-sm);
+    }
+    
+    .testimonial-disclaimer p {
+        font-size: 0.8rem;
+    }
 }
 
 .hero-image img {
@@ -892,6 +903,30 @@ h1, h2, h3, h4, h5, h6 {
 .read-more-btn:hover {
     background-color: var(--primary-color);
     color: white;
+}
+
+/* Testimonial Disclaimer */
+.testimonial-disclaimer {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-disclaimer p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
 }
 
 /* FAQ Section */
@@ -1994,5 +2029,16 @@ body::before {
     
     .testimonial-card {
         min-height: 400px;
+    }
+    
+    .testimonial-disclaimer {
+        margin-top: var(--spacing-md);
+        padding: var(--spacing-xs);
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    
+    .testimonial-disclaimer p {
+        font-size: 0.75rem;
     }
 }
