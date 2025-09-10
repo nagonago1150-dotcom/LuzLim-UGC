@@ -301,78 +301,159 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-.hero-description-wrapper {
+.hero-features {
     width: 100%;
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 0 var(--spacing-md) 0;
-    text-align: center;
-    position: relative;
-    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
     background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.6) 0%, 
-        rgba(245, 245, 220, 0.4) 100%);
-    border-radius: 16px;
-    border: 1px solid rgba(139, 69, 19, 0.1);
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(245, 245, 220, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(139, 69, 19, 0.15);
+    border-radius: 50px;
+    padding: var(--spacing-md) var(--spacing-lg);
     box-shadow: 
-        0 4px 20px rgba(139, 69, 19, 0.08),
-        0 8px 40px rgba(0, 0, 0, 0.05);
+        0 8px 32px rgba(139, 69, 19, 0.1),
+        0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
-.hero-description {
-    font-size: 1.5rem;
+.trust-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 40px rgba(139, 69, 19, 0.15),
+        0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.badge-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.badge-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.badge-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.badge-subtitle {
+    font-size: 0.85rem;
+    font-weight: 500;
     color: var(--text-light);
-    margin: 0;
-    line-height: 1.8;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    width: 100%;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
-    position: relative;
+    line-height: 1.2;
 }
 
-.highlight-badge {
-    display: inline-block;
+.feature-highlights {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
     background: linear-gradient(135deg, 
         var(--primary-color) 0%, 
         var(--accent-color) 100%);
+    border-radius: 25px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: 
+        0 6px 24px rgba(139, 69, 19, 0.2),
+        0 12px 48px rgba(0, 0, 0, 0.1);
     color: white;
-    padding: 6px 14px;
-    border-radius: 20px;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.feature-label {
+    font-size: 0.9rem;
     font-weight: 600;
-    font-size: 0.85em;
-    box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
-    margin: 0 6px 6px 0;
-    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.feature-text {
-    display: inline-block;
-    color: var(--primary-dark);
-    font-weight: 600;
-    background: rgba(139, 69, 19, 0.08);
-    padding: 2px 8px;
-    border-radius: 12px;
-    margin: 0 2px;
-    position: relative;
-}
-
-.problem-solve {
-    display: inline-block;
-    color: var(--text-dark);
-    font-weight: 500;
-    position: relative;
-}
-
-.solution-text {
-    display: inline-block;
-    color: var(--primary-color);
+.feature-divider {
+    font-size: 1.2rem;
     font-weight: 700;
-    font-size: 1.05em;
-    position: relative;
+    opacity: 0.8;
+}
+
+.solution-banner {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.9) 0%, 
+        rgba(245, 245, 220, 0.8) 100%);
+    border: 2px solid var(--gold-accent);
+    border-radius: 30px;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    box-shadow: 
+        0 4px 20px rgba(218, 165, 32, 0.2),
+        0 8px 40px rgba(0, 0, 0, 0.05);
+    animation: solutionPulse 3s ease-in-out infinite;
+}
+
+@keyframes solutionPulse {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 
+            0 4px 20px rgba(218, 165, 32, 0.2),
+            0 8px 40px rgba(0, 0, 0, 0.05);
+    }
+    50% { 
+        transform: scale(1.02); 
+        box-shadow: 
+            0 6px 30px rgba(218, 165, 32, 0.3),
+            0 12px 60px rgba(0, 0, 0, 0.08);
+    }
+}
+
+.problem-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.arrow {
+    font-size: 1.2rem;
+    color: var(--gold-accent);
+    font-weight: 700;
+}
+
+.solution-result {
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, 
+        var(--primary-color) 0%, 
+        var(--gold-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-product-image {
@@ -454,33 +535,57 @@ h1, h2, h3, h4, h5, h6 {
         font-size: clamp(1.1rem, 4vw, 1.4rem);
     }
     
-    .hero-description-wrapper {
-        padding: var(--spacing-sm);
-        border-radius: 15px;
-        margin-bottom: var(--spacing-sm);
+    .hero-features {
+        gap: var(--spacing-md);
+        max-width: 100%;
     }
     
-    .hero-description {
-        font-size: clamp(1rem, 3.5vw, 1.3rem);
-        line-height: 1.6;
+    .trust-badge {
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: 40px;
+        gap: 12px;
     }
     
-    .highlight-badge {
-        font-size: 0.8em;
-        padding: 6px 12px;
-        margin: 0 4px 6px 0;
+    .badge-icon {
+        font-size: 1.5rem;
+    }
+    
+    .badge-title {
+        font-size: 0.9rem;
+    }
+    
+    .badge-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .feature-highlights {
+        padding: var(--spacing-sm) var(--spacing-md);
+        gap: var(--spacing-sm);
         border-radius: 20px;
     }
     
-    .feature-text {
-        padding: 2px 8px;
-        border-radius: 10px;
-        margin: 0 2px;
-        font-size: 0.95em;
+    .feature-icon {
+        font-size: 1.2rem;
     }
     
-    .solution-text {
-        font-size: 1.05em;
+    .feature-label {
+        font-size: 0.8rem;
+    }
+    
+    .solution-banner {
+        padding: 10px var(--spacing-md);
+        gap: 8px;
+        border-radius: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .problem-text {
+        font-size: 0.8rem;
+    }
+    
+    .solution-result {
+        font-size: 1rem;
     }
     
     .hero-product-image {
@@ -2079,42 +2184,74 @@ body::before {
         font-size: clamp(1rem, 5vw, 1.2rem);
     }
     
-    .hero-description-wrapper {
-        padding: 12px;
-        border-radius: 12px;
-        margin-bottom: 12px;
+    .hero-features {
+        gap: 12px;
+        max-width: 100%;
     }
     
-    .hero-description {
-        font-size: clamp(0.9rem, 4vw, 1.1rem);
-        padding: 0 8px;
+    .trust-badge {
+        padding: 12px 16px;
+        border-radius: 30px;
+        gap: 8px;
+        flex-direction: column;
         text-align: center;
     }
     
-    .highlight-badge {
-        font-size: 0.75em;
-        padding: 4px 8px;
-        margin: 0 2px 4px 0;
-        border-radius: 15px;
-        display: block;
-        margin-bottom: 8px;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
+    .badge-icon {
+        font-size: 1.3rem;
     }
     
-    .feature-text {
-        padding: 2px 6px;
-        border-radius: 8px;
-        margin: 0 1px;
-        font-size: 0.9em;
-        display: inline-block;
+    .badge-title {
+        font-size: 0.8rem;
     }
     
-    .solution-text {
-        font-size: 1em;
-        display: block;
-        margin-top: 4px;
+    .badge-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .feature-highlights {
+        padding: 12px 16px;
+        gap: 8px;
+        border-radius: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .feature-item {
+        gap: 2px;
+    }
+    
+    .feature-icon {
+        font-size: 1rem;
+    }
+    
+    .feature-label {
+        font-size: 0.75rem;
+    }
+    
+    .feature-divider {
+        font-size: 1rem;
+    }
+    
+    .solution-banner {
+        padding: 8px 12px;
+        gap: 6px;
+        border-radius: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .problem-text {
+        font-size: 0.75rem;
+    }
+    
+    .arrow {
+        font-size: 1rem;
+        transform: rotate(90deg);
+    }
+    
+    .solution-result {
+        font-size: 0.9rem;
     }
     
     .hero-product-image {
