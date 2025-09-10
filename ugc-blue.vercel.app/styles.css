@@ -848,7 +848,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .testimonial-image img[alt="40代女性"] {
-    object-position: center 25%;
+    object-position: center 5%;
     object-fit: cover;
 }
 
