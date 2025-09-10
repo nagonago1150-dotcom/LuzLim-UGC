@@ -301,152 +301,118 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-.hero-features {
+.hero-description-elegant {
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 0 var(--spacing-md) 0;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
-    align-items: center;
+    gap: var(--spacing-xl);
+    text-align: center;
+    position: relative;
 }
 
-.trust-badge {
+.credential-line {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-sm);
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.95) 0%, 
-        rgba(245, 245, 220, 0.9) 100%);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 2px solid rgba(139, 69, 19, 0.15);
-    border-radius: 50px;
-    padding: var(--spacing-md) var(--spacing-lg);
-    box-shadow: 
-        0 8px 32px rgba(139, 69, 19, 0.1),
-        0 4px 16px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    padding: var(--spacing-md) 0;
+    position: relative;
 }
 
-.trust-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-        0 12px 40px rgba(139, 69, 19, 0.15),
-        0 6px 20px rgba(0, 0, 0, 0.08);
+.credential-line::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(139, 69, 19, 0.2) 20%, 
+        rgba(139, 69, 19, 0.3) 50%, 
+        rgba(139, 69, 19, 0.2) 80%, 
+        transparent 100%);
+    z-index: 1;
 }
 
-.badge-icon {
-    font-size: 1.8rem;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+.medical-symbol {
+    color: var(--gold-accent);
+    font-size: 1.2rem;
+    font-weight: 300;
+    z-index: 2;
+    background: var(--background-light);
+    padding: 0 var(--spacing-sm);
+    position: relative;
 }
 
-.badge-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.badge-title {
+.credential-text {
     font-size: 1rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    line-height: 1.2;
-}
-
-.badge-subtitle {
-    font-size: 0.85rem;
     font-weight: 500;
-    color: var(--text-light);
-    line-height: 1.2;
+    color: var(--text-dark);
+    letter-spacing: 0.5px;
+    z-index: 2;
+    background: var(--background-light);
+    padding: 0 var(--spacing-md);
+    position: relative;
+    font-family: serif;
 }
 
-.feature-highlights {
+.benefits-showcase {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    background: linear-gradient(135deg, 
-        var(--primary-color) 0%, 
-        var(--accent-color) 100%);
-    border-radius: 25px;
-    padding: var(--spacing-md) var(--spacing-lg);
-    box-shadow: 
-        0 6px 24px rgba(139, 69, 19, 0.2),
-        0 12px 48px rgba(0, 0, 0, 0.1);
-    color: white;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+    padding: var(--spacing-lg) 0;
 }
 
-.feature-item {
+.benefit-detail {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4px;
 }
 
-.feature-icon {
-    font-size: 1.5rem;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-.feature-label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.feature-divider {
-    font-size: 1.2rem;
+.benefit-name {
+    font-size: 1.3rem;
     font-weight: 700;
-    opacity: 0.8;
+    color: var(--primary-color);
+    letter-spacing: 1px;
 }
 
-.solution-banner {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.9) 0%, 
-        rgba(245, 245, 220, 0.8) 100%);
-    border: 2px solid var(--gold-accent);
-    border-radius: 30px;
-    padding: var(--spacing-sm) var(--spacing-lg);
-    box-shadow: 
-        0 4px 20px rgba(218, 165, 32, 0.2),
-        0 8px 40px rgba(0, 0, 0, 0.05);
-    animation: solutionPulse 3s ease-in-out infinite;
-}
-
-@keyframes solutionPulse {
-    0%, 100% { 
-        transform: scale(1); 
-        box-shadow: 
-            0 4px 20px rgba(218, 165, 32, 0.2),
-            0 8px 40px rgba(0, 0, 0, 0.05);
-    }
-    50% { 
-        transform: scale(1.02); 
-        box-shadow: 
-            0 6px 30px rgba(218, 165, 32, 0.3),
-            0 12px 60px rgba(0, 0, 0, 0.08);
-    }
-}
-
-.problem-text {
+.benefit-method {
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-light);
-    text-decoration: line-through;
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+.elegant-separator {
+    font-size: 1.5rem;
+    color: var(--gold-accent);
+    font-weight: 300;
     opacity: 0.7;
 }
 
-.arrow {
-    font-size: 1.2rem;
-    color: var(--gold-accent);
-    font-weight: 700;
+.benefit-outcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
 }
 
-.solution-result {
-    font-size: 1.1rem;
+.outcome-label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-light);
+    letter-spacing: 0.2px;
+}
+
+.outcome-result {
+    font-size: 1.4rem;
     font-weight: 700;
     background: linear-gradient(135deg, 
         var(--primary-color) 0%, 
@@ -454,6 +420,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    letter-spacing: 1px;
 }
 
 .hero-product-image {
@@ -535,57 +502,45 @@ h1, h2, h3, h4, h5, h6 {
         font-size: clamp(1.1rem, 4vw, 1.4rem);
     }
     
-    .hero-features {
-        gap: var(--spacing-md);
+    .hero-description-elegant {
+        gap: var(--spacing-lg);
         max-width: 100%;
     }
     
-    .trust-badge {
-        padding: var(--spacing-sm) var(--spacing-md);
-        border-radius: 40px;
-        gap: 12px;
+    .credential-text {
+        font-size: 0.9rem;
+        letter-spacing: 0.3px;
     }
     
-    .badge-icon {
-        font-size: 1.5rem;
+    .medical-symbol {
+        font-size: 1rem;
     }
     
-    .badge-title {
+    .benefits-showcase {
+        gap: var(--spacing-lg);
+        padding: var(--spacing-md) 0;
+    }
+    
+    .benefit-name {
+        font-size: 1.1rem;
+        letter-spacing: 0.8px;
+    }
+    
+    .benefit-method {
+        font-size: 0.8rem;
+    }
+    
+    .elegant-separator {
+        font-size: 1.3rem;
+    }
+    
+    .outcome-label {
         font-size: 0.9rem;
     }
     
-    .badge-subtitle {
-        font-size: 0.75rem;
-    }
-    
-    .feature-highlights {
-        padding: var(--spacing-sm) var(--spacing-md);
-        gap: var(--spacing-sm);
-        border-radius: 20px;
-    }
-    
-    .feature-icon {
+    .outcome-result {
         font-size: 1.2rem;
-    }
-    
-    .feature-label {
-        font-size: 0.8rem;
-    }
-    
-    .solution-banner {
-        padding: 10px var(--spacing-md);
-        gap: 8px;
-        border-radius: 25px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .problem-text {
-        font-size: 0.8rem;
-    }
-    
-    .solution-result {
-        font-size: 1rem;
+        letter-spacing: 0.8px;
     }
     
     .hero-product-image {
@@ -2184,74 +2139,56 @@ body::before {
         font-size: clamp(1rem, 5vw, 1.2rem);
     }
     
-    .hero-features {
-        gap: 12px;
+    .hero-description-elegant {
+        gap: var(--spacing-md);
         max-width: 100%;
     }
     
-    .trust-badge {
-        padding: 12px 16px;
-        border-radius: 30px;
-        gap: 8px;
+    .credential-line {
         flex-direction: column;
-        text-align: center;
+        gap: 8px;
+        padding: var(--spacing-sm) 0;
     }
     
-    .badge-icon {
-        font-size: 1.3rem;
-    }
-    
-    .badge-title {
+    .credential-text {
         font-size: 0.8rem;
-    }
-    
-    .badge-subtitle {
-        font-size: 0.7rem;
-    }
-    
-    .feature-highlights {
-        padding: 12px 16px;
-        gap: 8px;
-        border-radius: 18px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .feature-item {
-        gap: 2px;
-    }
-    
-    .feature-icon {
-        font-size: 1rem;
-    }
-    
-    .feature-label {
-        font-size: 0.75rem;
-    }
-    
-    .feature-divider {
-        font-size: 1rem;
-    }
-    
-    .solution-banner {
-        padding: 8px 12px;
-        gap: 6px;
-        border-radius: 20px;
-        flex-direction: column;
+        letter-spacing: 0.2px;
+        padding: 0 var(--spacing-sm);
         text-align: center;
     }
     
-    .problem-text {
+    .medical-symbol {
+        font-size: 0.9rem;
+        display: none;
+    }
+    
+    .benefits-showcase {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .benefit-name {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .benefit-method {
         font-size: 0.75rem;
     }
     
-    .arrow {
-        font-size: 1rem;
+    .elegant-separator {
+        font-size: 1.1rem;
         transform: rotate(90deg);
     }
     
-    .solution-result {
-        font-size: 0.9rem;
+    .outcome-label {
+        font-size: 0.8rem;
+    }
+    
+    .outcome-result {
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
     }
     
     .hero-product-image {
