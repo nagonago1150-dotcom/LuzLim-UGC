@@ -59,6 +59,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Container */
@@ -67,6 +70,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-sm);
+    box-sizing: border-box;
 }
 
 /* Typography */
@@ -142,6 +146,46 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
     white-space: nowrap;
     overflow: visible;
+}
+
+/* Advertisement Label */
+.advertisement-label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    background: linear-gradient(135deg, 
+        rgba(139, 69, 19, 0.9) 0%, 
+        rgba(180, 134, 96, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 8px 16px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.15),
+        0 8px 40px rgba(139, 69, 19, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transform: rotate(-2deg);
+    transition: all 0.3s ease;
+}
+
+.advertisement-label:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 
+        0 6px 30px rgba(0, 0, 0, 0.2),
+        0 12px 60px rgba(139, 69, 19, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.advertisement-label span {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    display: block;
+    text-align: center;
 }
 
 /* Hero Section */
@@ -322,6 +366,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+    .advertisement-label {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        border-radius: 10px;
+        transform: rotate(-1deg);
+    }
+    
+    .advertisement-label span {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+    
     .hero .container {
         padding: var(--spacing-lg) var(--spacing-sm);
         min-height: 100vh;
@@ -380,7 +437,11 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .testimonial-image {
-        height: 180px;
+        height: 220px;
+    }
+    
+    .testimonial-image img {
+        object-position: center 20%;
     }
     
     .portrait-content {
@@ -743,7 +804,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .testimonial-image {
     width: 100%;
-    height: 200px;
+    height: 240px;
     overflow: hidden;
     border-radius: 16px 16px 0 0;
     position: relative;
@@ -753,6 +814,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
     transition: transform 0.4s ease;
     filter: brightness(1.1) contrast(1.05);
 }
@@ -1845,5 +1907,80 @@ body::before {
 @media (min-width: 768px) {
     .mobile-br {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .advertisement-label {
+        top: 10px;
+        right: 10px;
+        padding: 4px 8px;
+        border-radius: 8px;
+    }
+    
+    .advertisement-label span {
+        font-size: 0.8rem;
+        letter-spacing: 0.3px;
+    }
+    
+    .hero .container {
+        padding: var(--spacing-md) 12px;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 5vw, 1.2rem);
+    }
+    
+    .hero-description {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+        padding: 0 8px;
+        text-align: center;
+    }
+    
+    .hero-product-image {
+        max-width: 120px;
+    }
+    
+    .hero-product-image img {
+        max-width: 110px;
+    }
+    
+    .section-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        padding: 0 8px;
+    }
+    
+    .cta-title {
+        font-size: 1.5rem;
+        padding: 0 8px;
+    }
+    
+    .cta-highlight {
+        font-size: 2rem;
+    }
+    
+    .new-price {
+        font-size: 2rem;
+    }
+    
+    .testimonial-image {
+        height: 200px;
+    }
+    
+    .testimonial-image img {
+        object-position: center 25%;
+    }
+    
+    .testimonial-card {
+        min-height: 380px;
     }
 }
