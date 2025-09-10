@@ -310,6 +310,24 @@ h1, h2, h3, h4, h5, h6 {
     gap: var(--spacing-xl);
     text-align: center;
     position: relative;
+    animation: heroElegantEntrance 1.2s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes heroElegantEntrance {
+    0% { 
+        opacity: 0; 
+        transform: translateY(30px);
+    }
+    60% { 
+        opacity: 0.8; 
+        transform: translateY(-5px);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
 }
 
 .credential-line {
@@ -319,6 +337,20 @@ h1, h2, h3, h4, h5, h6 {
     gap: var(--spacing-sm);
     padding: var(--spacing-md) 0;
     position: relative;
+    animation: credentialSlideIn 1.5s ease-out 0.3s forwards;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+@keyframes credentialSlideIn {
+    0% { 
+        opacity: 0; 
+        transform: translateX(-50px);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateX(0);
+    }
 }
 
 .credential-line::before {
@@ -335,6 +367,13 @@ h1, h2, h3, h4, h5, h6 {
         rgba(139, 69, 19, 0.2) 80%, 
         transparent 100%);
     z-index: 1;
+    animation: lineExpand 2s ease-out 0.8s forwards;
+    transform: scaleX(0);
+}
+
+@keyframes lineExpand {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
 }
 
 .medical-symbol {
@@ -345,6 +384,19 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--background-light);
     padding: 0 var(--spacing-sm);
     position: relative;
+    animation: symbolPulse 2s ease-in-out infinite 1.5s;
+    transform-origin: center;
+}
+
+@keyframes symbolPulse {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+    50% { 
+        transform: scale(1.1) rotate(5deg);
+        filter: brightness(1.2);
+    }
 }
 
 .credential-text {
@@ -357,6 +409,18 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 var(--spacing-md);
     position: relative;
     font-family: serif;
+    animation: textGlow 3s ease-in-out infinite 2s;
+}
+
+@keyframes textGlow {
+    0%, 100% { 
+        text-shadow: 0 0 5px rgba(139, 69, 19, 0.2);
+        transform: scale(1);
+    }
+    50% { 
+        text-shadow: 0 0 15px rgba(139, 69, 19, 0.4), 0 0 25px rgba(218, 165, 32, 0.3);
+        transform: scale(1.02);
+    }
 }
 
 .benefits-showcase {
@@ -366,6 +430,20 @@ h1, h2, h3, h4, h5, h6 {
     gap: var(--spacing-xl);
     flex-wrap: wrap;
     padding: var(--spacing-lg) 0;
+    animation: showcaseRise 1.8s ease-out 0.6s forwards;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+@keyframes showcaseRise {
+    0% { 
+        opacity: 0; 
+        transform: translateY(40px);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
 }
 
 .benefit-detail {
@@ -380,6 +458,24 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: var(--primary-color);
     letter-spacing: 1px;
+    animation: benefitPop 2s ease-out 1.2s forwards;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+@keyframes benefitPop {
+    0% { 
+        opacity: 0; 
+        transform: scale(0.8);
+    }
+    70% { 
+        opacity: 1; 
+        transform: scale(1.05);
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1);
+    }
 }
 
 .benefit-method {
@@ -395,6 +491,23 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--gold-accent);
     font-weight: 300;
     opacity: 0.7;
+    animation: separatorWave 2.5s ease-in-out infinite 1.8s;
+    transform-origin: center;
+}
+
+@keyframes separatorWave {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 0.7;
+    }
+    25% { 
+        transform: scale(1.1) rotate(5deg);
+        opacity: 1;
+    }
+    75% { 
+        transform: scale(1.1) rotate(-5deg);
+        opacity: 1;
+    }
 }
 
 .benefit-outcome {
@@ -421,6 +534,53 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: 1px;
+    animation: outcomeSparkle 2.2s ease-out 1.5s forwards, outcomePulse 3s ease-in-out infinite 3.5s;
+    opacity: 0;
+    transform: translateX(30px) scale(0.9);
+    position: relative;
+    overflow: hidden;
+}
+
+.outcome-result::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: outcomeShine 2.5s ease-in-out infinite 4s;
+}
+
+@keyframes outcomeSparkle {
+    0% { 
+        opacity: 0; 
+        transform: translateX(30px) scale(0.9);
+    }
+    70% { 
+        opacity: 1; 
+        transform: translateX(-3px) scale(1.05);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes outcomePulse {
+    0%, 100% { 
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% { 
+        transform: scale(1.03);
+        filter: brightness(1.1);
+    }
+}
+
+@keyframes outcomeShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
 .hero-product-image {
