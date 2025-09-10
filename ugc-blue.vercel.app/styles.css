@@ -441,7 +441,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .testimonial-image img {
-        object-position: center 25%;
+        object-position: center 15%;
         object-fit: cover;
     }
     
@@ -818,7 +818,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .testimonial-image {
     width: 100%;
-    height: 280px;
+    height: 320px;
     overflow: hidden;
     border-radius: 16px 16px 0 0;
     position: relative;
@@ -831,7 +831,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 20%;
     transition: transform 0.4s ease;
     filter: brightness(1.1) contrast(1.05);
     border-radius: 16px 16px 0 0;
@@ -839,6 +839,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .testimonial-card:hover .testimonial-image img {
     transform: scale(1.08);
+}
+
+/* 特定の画像に対する調整 */
+.testimonial-image img[alt="20代女性"] {
+    object-position: center 10%;
+    object-fit: cover;
+}
+
+.testimonial-image img[alt="40代女性"] {
+    object-position: center 25%;
+    object-fit: cover;
 }
 
 /* Removed carousel navigation styles - no longer needed */
@@ -2023,7 +2034,7 @@ body::before {
     }
     
     .testimonial-image img {
-        object-position: center 30%;
+        object-position: center 15%;
         object-fit: cover;
     }
     
