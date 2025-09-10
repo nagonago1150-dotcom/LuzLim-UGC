@@ -301,286 +301,81 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-.hero-description-elegant {
+.hero-description-simple {
     width: 100%;
-    max-width: 700px;
-    margin: 0 0 var(--spacing-md) 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
+    max-width: 600px;
+    margin: 0 0 var(--spacing-lg) 0;
     text-align: center;
     position: relative;
-    animation: heroElegantEntrance 1.2s ease-out forwards;
-    opacity: 0;
-    transform: translateY(30px);
 }
 
-@keyframes heroElegantEntrance {
-    0% { 
-        opacity: 0; 
-        transform: translateY(30px);
-    }
-    60% { 
-        opacity: 0.8; 
-        transform: translateY(-5px);
-    }
-    100% { 
-        opacity: 1; 
-        transform: translateY(0);
-    }
-}
-
-.credential-line {
+.key-message {
     display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
     align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-md) 0;
+}
+
+.brand-highlight {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: white;
+    background: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
     position: relative;
-    animation: credentialSlideIn 1.5s ease-out 0.3s forwards;
-    opacity: 0;
-    transform: translateX(-50px);
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+    animation: highlightPulse 2s ease-in-out infinite;
 }
 
-@keyframes credentialSlideIn {
-    0% { 
-        opacity: 0; 
-        transform: translateX(-50px);
+@keyframes highlightPulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
     }
-    100% { 
-        opacity: 1; 
-        transform: translateX(0);
+    50% { 
+        transform: scale(1.02);
+        box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
     }
 }
 
-.credential-line::before {
+.main-benefit {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.4;
+    margin: 0;
+    letter-spacing: 0.5px;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-benefit::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
     background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(139, 69, 19, 0.2) 20%, 
-        rgba(139, 69, 19, 0.3) 50%, 
-        rgba(139, 69, 19, 0.2) 80%, 
-        transparent 100%);
-    z-index: 1;
-    animation: lineExpand 2s ease-out 0.8s forwards;
-    transform: scaleX(0);
-}
-
-@keyframes lineExpand {
-    0% { transform: scaleX(0); }
-    100% { transform: scaleX(1); }
-}
-
-.medical-symbol {
-    color: var(--gold-accent);
-    font-size: 1.2rem;
-    font-weight: 300;
-    z-index: 2;
-    background: var(--background-light);
-    padding: 0 var(--spacing-sm);
-    position: relative;
-    animation: symbolPulse 2s ease-in-out infinite 1.5s;
-    transform-origin: center;
-}
-
-@keyframes symbolPulse {
-    0%, 100% { 
-        transform: scale(1) rotate(0deg);
-        filter: brightness(1);
-    }
-    50% { 
-        transform: scale(1.1) rotate(5deg);
-        filter: brightness(1.2);
-    }
-}
-
-.credential-text {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-dark);
-    letter-spacing: 0.5px;
-    z-index: 2;
-    background: var(--background-light);
-    padding: 0 var(--spacing-md);
-    position: relative;
-    font-family: serif;
-    animation: textGlow 3s ease-in-out infinite 2s;
-}
-
-@keyframes textGlow {
-    0%, 100% { 
-        text-shadow: 0 0 5px rgba(139, 69, 19, 0.2);
-        transform: scale(1);
-    }
-    50% { 
-        text-shadow: 0 0 15px rgba(139, 69, 19, 0.4), 0 0 25px rgba(218, 165, 32, 0.3);
-        transform: scale(1.02);
-    }
-}
-
-.benefits-showcase {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xl);
-    flex-wrap: wrap;
-    padding: var(--spacing-lg) 0;
-    animation: showcaseRise 1.8s ease-out 0.6s forwards;
-    opacity: 0;
-    transform: translateY(40px);
-}
-
-@keyframes showcaseRise {
-    0% { 
-        opacity: 0; 
-        transform: translateY(40px);
-    }
-    100% { 
-        opacity: 1; 
-        transform: translateY(0);
-    }
-}
-
-.benefit-detail {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-
-.benefit-name {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: 1px;
-    animation: benefitPop 2s ease-out 1.2s forwards;
-    opacity: 0;
-    transform: scale(0.8);
-}
-
-@keyframes benefitPop {
-    0% { 
-        opacity: 0; 
-        transform: scale(0.8);
-    }
-    70% { 
-        opacity: 1; 
-        transform: scale(1.05);
-    }
-    100% { 
-        opacity: 1; 
-        transform: scale(1);
-    }
-}
-
-.benefit-method {
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: var(--text-light);
-    font-style: italic;
-    letter-spacing: 0.3px;
-}
-
-.elegant-separator {
-    font-size: 1.5rem;
-    color: var(--gold-accent);
-    font-weight: 300;
-    opacity: 0.7;
-    animation: separatorWave 2.5s ease-in-out infinite 1.8s;
-    transform-origin: center;
-}
-
-@keyframes separatorWave {
-    0%, 100% { 
-        transform: scale(1) rotate(0deg);
-        opacity: 0.7;
-    }
-    25% { 
-        transform: scale(1.1) rotate(5deg);
-        opacity: 1;
-    }
-    75% { 
-        transform: scale(1.1) rotate(-5deg);
-        opacity: 1;
-    }
-}
-
-.benefit-outcome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-
-.outcome-label {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--text-light);
-    letter-spacing: 0.2px;
-}
-
-.outcome-result {
-    font-size: 1.4rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, 
         var(--primary-color) 0%, 
         var(--gold-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: 1px;
-    animation: outcomeSparkle 2.2s ease-out 1.5s forwards, outcomePulse 3s ease-in-out infinite 3.5s;
-    opacity: 0;
-    transform: translateX(30px) scale(0.9);
-    position: relative;
-    overflow: hidden;
+    border-radius: 2px;
+    animation: underlineGrow 1.5s ease-out 0.5s forwards;
+    transform-origin: center;
+    transform: translateX(-50%) scaleX(0);
 }
 
-.outcome-result::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-    animation: outcomeShine 2.5s ease-in-out infinite 4s;
+@keyframes underlineGrow {
+    0% { transform: translateX(-50%) scaleX(0); }
+    100% { transform: translateX(-50%) scaleX(1); }
 }
 
-@keyframes outcomeSparkle {
-    0% { 
-        opacity: 0; 
-        transform: translateX(30px) scale(0.9);
-    }
-    70% { 
-        opacity: 1; 
-        transform: translateX(-3px) scale(1.05);
-    }
-    100% { 
-        opacity: 1; 
-        transform: translateX(0) scale(1);
-    }
-}
-
-@keyframes outcomePulse {
-    0%, 100% { 
-        transform: scale(1);
-        filter: brightness(1);
-    }
-    50% { 
-        transform: scale(1.03);
-        filter: brightness(1.1);
-    }
-}
-
-@keyframes outcomeShine {
-    0% { left: -100%; }
-    100% { left: 100%; }
+.pc-br {
+    display: block;
 }
 
 .hero-product-image {
@@ -662,45 +457,23 @@ h1, h2, h3, h4, h5, h6 {
         font-size: clamp(1.1rem, 4vw, 1.4rem);
     }
     
-    .hero-description-elegant {
-        gap: var(--spacing-lg);
+    .hero-description-simple {
         max-width: 100%;
     }
     
-    .credential-text {
-        font-size: 0.9rem;
+    .brand-highlight {
+        font-size: 0.85rem;
+        padding: 6px 16px;
+    }
+    
+    .main-benefit {
+        font-size: 1.5rem;
         letter-spacing: 0.3px;
+        line-height: 1.3;
     }
     
-    .medical-symbol {
-        font-size: 1rem;
-    }
-    
-    .benefits-showcase {
-        gap: var(--spacing-lg);
-        padding: var(--spacing-md) 0;
-    }
-    
-    .benefit-name {
-        font-size: 1.1rem;
-        letter-spacing: 0.8px;
-    }
-    
-    .benefit-method {
-        font-size: 0.8rem;
-    }
-    
-    .elegant-separator {
-        font-size: 1.3rem;
-    }
-    
-    .outcome-label {
-        font-size: 0.9rem;
-    }
-    
-    .outcome-result {
-        font-size: 1.2rem;
-        letter-spacing: 0.8px;
+    .pc-br {
+        display: block;
     }
     
     .hero-product-image {
@@ -2299,56 +2072,25 @@ body::before {
         font-size: clamp(1rem, 5vw, 1.2rem);
     }
     
-    .hero-description-elegant {
-        gap: var(--spacing-md);
+    .hero-description-simple {
         max-width: 100%;
+        margin-bottom: var(--spacing-md);
     }
     
-    .credential-line {
-        flex-direction: column;
-        gap: 8px;
-        padding: var(--spacing-sm) 0;
-    }
-    
-    .credential-text {
-        font-size: 0.8rem;
-        letter-spacing: 0.2px;
-        padding: 0 var(--spacing-sm);
-        text-align: center;
-    }
-    
-    .medical-symbol {
-        font-size: 0.9rem;
-        display: none;
-    }
-    
-    .benefits-showcase {
-        flex-direction: column;
-        gap: var(--spacing-md);
-        padding: var(--spacing-sm) 0;
-    }
-    
-    .benefit-name {
-        font-size: 1rem;
-        letter-spacing: 0.5px;
-    }
-    
-    .benefit-method {
+    .brand-highlight {
         font-size: 0.75rem;
+        padding: 5px 14px;
+        border-radius: 40px;
     }
     
-    .elegant-separator {
-        font-size: 1.1rem;
-        transform: rotate(90deg);
+    .main-benefit {
+        font-size: 1.3rem;
+        letter-spacing: 0.2px;
+        line-height: 1.25;
     }
     
-    .outcome-label {
-        font-size: 0.8rem;
-    }
-    
-    .outcome-result {
-        font-size: 1.1rem;
-        letter-spacing: 0.5px;
+    .pc-br {
+        display: block;
     }
     
     .hero-product-image {
