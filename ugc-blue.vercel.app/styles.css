@@ -834,6 +834,39 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+/* Features Image Styling */
+.features-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-md);
+}
+
+.features-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.features-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .features-image-container {
+        padding: var(--spacing-sm);
+        margin: var(--spacing-lg) 0;
+    }
+    
+    .features-image {
+        border-radius: 12px;
+    }
+}
+
 .stats-grid {
     display: grid;
     grid-template-columns: 1fr;
