@@ -79,6 +79,11 @@ body {
     max-width: 100%;
 }
 
+/* Mobile break line - hidden by default */
+.mobile-br {
+    display: none;
+}
+
 @media (max-width: 768px) {
     body {
         width: 100%;
@@ -1967,13 +1972,40 @@ details[open] .faq-question::after {
     }
     
     .section-title {
-        text-align: center;
+        text-align: left;
         word-wrap: break-word;
         overflow-wrap: break-word;
         padding: 0 var(--spacing-sm);
         margin-bottom: var(--spacing-lg);
         width: 100%;
         box-sizing: border-box;
+    }
+    
+    /* お客様の声セクション以下を左寄せ */
+    .user-portraits .section-title,
+    .faq .section-title,
+    .cta-section .section-title {
+        text-align: left;
+    }
+    
+    /* 疑似要素も左寄せ */
+    .user-portraits .section-title::after,
+    .faq .section-title::after,
+    .cta-section .section-title::after {
+        left: 0;
+        transform: none;
+    }
+    
+    .user-portraits .section-title::before,
+    .faq .section-title::before,
+    .cta-section .section-title::before {
+        left: 0;
+        transform: none;
+    }
+    
+    /* mobile-br クラスを表示 */
+    .mobile-br {
+        display: inline;
     }
     
     /* All sections */
@@ -2680,10 +2712,37 @@ body::before {
         font-size: clamp(1.6rem, 6vw, 2.2rem);
         padding: 0 var(--spacing-sm);
         margin-bottom: var(--spacing-lg);
-        text-align: center;
+        text-align: left;
         word-wrap: break-word;
         overflow-wrap: break-word;
         line-height: 1.3;
+    }
+    
+    /* Mobile break line */
+    .mobile-br {
+        display: inline;
+    }
+    
+    /* お客様の声セクション以下を左寄せ */
+    .user-portraits .section-title,
+    .faq .section-title,
+    .cta-section .section-title {
+        text-align: left;
+    }
+    
+    /* 疑似要素も左寄せ */
+    .user-portraits .section-title::after,
+    .faq .section-title::after,
+    .cta-section .section-title::after {
+        left: 0;
+        transform: none;
+    }
+    
+    .user-portraits .section-title::before,
+    .faq .section-title::before,
+    .cta-section .section-title::before {
+        left: 0;
+        transform: none;
     }
     
     /* User portraits section */
@@ -2700,6 +2759,19 @@ body::before {
     /* CTA section for mobile */
     .cta-section .container {
         padding: 0 var(--spacing-sm) !important;
+    }
+    
+    /* FAQ content left align */
+    .faq-question,
+    .faq-answer {
+        text-align: left;
+    }
+    
+    /* CTA content left align */
+    .cta-title,
+    .price-section,
+    .benefits-list {
+        text-align: left;
     }
     
     .testimonial-card {
