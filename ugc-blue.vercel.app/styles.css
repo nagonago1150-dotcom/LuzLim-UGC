@@ -1586,24 +1586,30 @@ details[open] .faq-question::after {
 
 .benefit {
     background: linear-gradient(135deg, 
-        rgba(34, 139, 34, 0.1) 0%, 
-        rgba(255, 255, 255, 0.8) 50%, 
-        rgba(34, 139, 34, 0.1) 100%);
+        rgba(139, 69, 19, 0.08) 0%, 
+        rgba(255, 255, 255, 0.9) 50%, 
+        rgba(218, 165, 32, 0.08) 100%);
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: 25px;
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-dark);
-    border: 2px solid rgba(34, 139, 34, 0.2);
-    box-shadow: 0 4px 12px rgba(34, 139, 34, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    border: 2px solid rgba(139, 69, 19, 0.15);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .benefit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(34, 139, 34, 0.15);
+    box-shadow: 0 6px 18px rgba(139, 69, 19, 0.12);
+    background: linear-gradient(135deg, 
+        rgba(218, 165, 32, 0.1) 0%, 
+        rgba(255, 255, 255, 0.95) 50%, 
+        rgba(139, 69, 19, 0.1) 100%);
+    border-color: rgba(218, 165, 32, 0.2);
 }
 
 .special-price {
