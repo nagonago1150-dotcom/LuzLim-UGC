@@ -1448,6 +1448,11 @@ details[open] .faq-question::after {
     font-size: 2.5rem;
 }
 
+.price-section {
+    margin-bottom: var(--spacing-xxl);
+    padding: var(--spacing-lg) 0;
+}
+
 .price-comparison {
     display: flex;
     justify-content: center;
@@ -1460,7 +1465,145 @@ details[open] .faq-question::after {
 
 .regular-price {
     text-align: center;
-    opacity: 0.8;
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    border: 2px solid rgba(139, 69, 19, 0.1);
+}
+
+/* Discount Flow Styling */
+.discount-flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+    flex-wrap: wrap;
+}
+
+.discount-step {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.9) 0%, 
+        rgba(248, 240, 232, 0.8) 50%, 
+        rgba(255, 255, 255, 0.9) 100%);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 16px;
+    text-align: center;
+    border: 2px solid rgba(139, 69, 19, 0.15);
+    box-shadow: 0 8px 24px rgba(139, 69, 19, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.discount-step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(139, 69, 19, 0.15);
+}
+
+.discount-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.discount-amount {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--gold-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.discount-arrow {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    background: rgba(218, 165, 32, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gold-accent);
+}
+
+/* Final Price Styling */
+.final-price {
+    text-align: center;
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, 
+        rgba(218, 165, 32, 0.1) 0%, 
+        rgba(255, 255, 255, 0.9) 50%, 
+        rgba(218, 165, 32, 0.1) 100%);
+    border-radius: 20px;
+    border: 3px solid rgba(218, 165, 32, 0.3);
+    box-shadow: 0 15px 40px rgba(218, 165, 32, 0.2);
+}
+
+.final-price-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.final-price-amount {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--gold-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    display: block;
+    text-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
+}
+
+.tax-info {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-left: var(--spacing-sm);
+}
+
+/* Benefits List Styling */
+.benefits-list {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.benefit {
+    background: linear-gradient(135deg, 
+        rgba(34, 139, 34, 0.1) 0%, 
+        rgba(255, 255, 255, 0.8) 50%, 
+        rgba(34, 139, 34, 0.1) 100%);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    border: 2px solid rgba(34, 139, 34, 0.2);
+    box-shadow: 0 4px 12px rgba(34, 139, 34, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.benefit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(34, 139, 34, 0.15);
 }
 
 .special-price {
@@ -2544,6 +2687,39 @@ body::before {
         font-size: clamp(1rem, 4.5vw, 1.2rem);
         margin: var(--spacing-md) auto;
         box-sizing: border-box;
+    }
+    
+    /* Price Section Mobile Styles */
+    .discount-flow {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .discount-step {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .discount-arrow {
+        transform: rotate(90deg);
+        margin: var(--spacing-xs) 0;
+    }
+    
+    .final-price-amount {
+        font-size: clamp(2.5rem, 8vw, 3rem);
+    }
+    
+    .benefits-list {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .benefit {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
     }
     
     /* FAQ Section */
