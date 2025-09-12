@@ -362,8 +362,8 @@ h1, h2, h3, h4, h5, h6 {
         var(--background-light) 50%, 
         var(--secondary-color) 75%, 
         var(--background-pink) 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease-in-out infinite;
+    background-size: 100% 100%;
+    /* REMOVED: animation: gradientShift 15s ease-in-out infinite; */
     padding: var(--spacing-xxl) 0;
     min-height: 100vh;
     display: flex;
@@ -378,12 +378,12 @@ h1, h2, h3, h4, h5, h6 {
 .hero::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233E2723' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-    animation: patternMove 20s linear infinite;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233E2723' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    /* REMOVED: animation: patternMove 20s linear infinite; */
     z-index: 1;
 }
 
@@ -2273,6 +2273,7 @@ details[open] .faq-question::after {
 
 /* Dynamic Background Elements */
 .floating-elements {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -2287,11 +2288,12 @@ details[open] .faq-question::after {
     position: absolute;
     border-radius: 50%;
     background: linear-gradient(45deg, 
-        rgba(139, 69, 19, 0.04), 
-        rgba(205, 133, 63, 0.03));
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    animation: float 20s infinite ease-in-out;
-    will-change: transform;
+        rgba(139, 69, 19, 0.02), 
+        rgba(205, 133, 63, 0.015));
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    /* REMOVED: animation: float 20s infinite ease-in-out; */
+    will-change: auto;
+    opacity: 0.5;
 }
 
 /* Disable heavy effects on mobile */
@@ -2368,7 +2370,7 @@ details[open] .faq-question::after {
     }
 }
 
-/* Enhanced body with dynamic elements - MOBILE OPTIMIZED */
+/* Enhanced body with dynamic elements - STATIC VERSION */
 body::before {
     content: '';
     position: fixed;
@@ -2376,8 +2378,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.01) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(205, 133, 63, 0.008) 0%, transparent 50%);
+    background: rgba(139, 69, 19, 0.005);
     pointer-events: none;
     z-index: -1;
     will-change: auto;
@@ -2391,8 +2392,9 @@ body::before {
     }
 }
 
-/* Bubble Effects */
+/* Bubble Effects - DISABLED FOR PERFORMANCE */
 .bubble-container {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -2550,8 +2552,9 @@ body::before {
     100% { transform: translateY(-22vh) translateX(50px) scale(0); opacity: 0; }
 }
 
-/* Ripple Effects */
+/* Ripple Effects - DISABLED FOR PERFORMANCE */
 .ripple-container {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
