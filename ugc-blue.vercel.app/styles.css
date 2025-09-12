@@ -68,6 +68,19 @@ body {
         overflow-scrolling: touch;
     }
     
+    /* Testimonials centering fix for medium mobile */
+    .testimonials-grid {
+        padding: 0 var(--spacing-sm);
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .testimonial-card {
+        margin: 0 auto;
+        max-width: calc(100% - var(--spacing-md));
+        width: 100%;
+    }
+    
     /* Reduce animations on mobile */
     *, *::before, *::after {
         animation-duration: 0.3s !important;
@@ -1126,6 +1139,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 900px;
     margin: 0 auto;
     width: 100%;
+    /* Enhanced centering for all screen sizes */
+    justify-items: center;
+    place-items: center;
 }
 
 .testimonial-card {
@@ -2785,10 +2801,22 @@ body::before {
         transform: none;
     }
     
-    /* User portraits section */
+    /* User portraits section - PERFECT CENTERING */
+    .user-portraits {
+        text-align: center;
+    }
+    
     .testimonials-grid {
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-xs);
         gap: var(--spacing-lg);
+        /* Force perfect center alignment */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
     }
     
     /* FAQ section for mobile */
@@ -2816,8 +2844,13 @@ body::before {
     
     .testimonial-card {
         min-height: 380px;
-        margin: 0 var(--spacing-xs);
+        /* Remove margin causing right alignment */
+        margin: 0;
         box-sizing: border-box;
+        /* Perfect centering */
+        width: calc(100% - var(--spacing-sm));
+        max-width: 400px;
+        align-self: center;
     }
     
     .testimonial-image {
@@ -2852,8 +2885,10 @@ body::before {
     }
     
     .testimonial-disclaimer {
-        margin: var(--spacing-md) var(--spacing-sm) 0;
+        margin: var(--spacing-md) auto 0;
         padding: var(--spacing-sm);
+        max-width: calc(100% - var(--spacing-md));
+        text-align: center;
     }
     
     .testimonial-disclaimer p {
