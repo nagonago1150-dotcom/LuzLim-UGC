@@ -68,6 +68,14 @@ body {
         overflow-scrolling: touch;
     }
     
+    /* Remove hero section blur on mobile for better readability */
+    .hero-description-simple {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+        border: 1px solid rgba(139, 69, 19, 0.1) !important;
+    }
+    
     /* Testimonials centering fix for medium mobile */
     .testimonials-grid {
         padding: 0 var(--spacing-sm);
@@ -2893,6 +2901,26 @@ body::before {
     
     .testimonial-disclaimer p {
         font-size: 0.7rem;
+    }
+    
+    /* Enhanced hero blur removal for very small screens */
+    .hero-description-simple {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: none !important;
+        box-shadow: none !important;
+        animation: none !important;
+    }
+    
+    /* Ensure hero title is clearly visible */
+    .hero-title {
+        z-index: 10;
+        position: relative;
+    }
+    
+    .hero-main {
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
     }
     
     /* CTA Section */
