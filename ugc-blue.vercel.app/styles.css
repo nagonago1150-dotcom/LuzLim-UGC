@@ -78,6 +78,19 @@ body {
         transform: translateY(0) !important;
     }
     
+    /* Ensure LuzLim title is clearly visible on mobile */
+    .hero-main {
+        color: #2E1B0C !important;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        font-weight: 800;
+        -webkit-text-stroke: 0.5px #1A1A1A;
+    }
+    
+    .hero-subtitle {
+        color: #4A4A4A !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    
     /* Testimonials centering fix for medium mobile */
     .testimonials-grid {
         padding: 0 var(--spacing-sm);
@@ -2922,7 +2935,15 @@ body::before {
     }
     
     .hero-main {
-        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        color: #2E1B0C !important;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        font-weight: 900;
+        -webkit-text-stroke: 0.5px #1A1A1A;
+    }
+    
+    .hero-subtitle {
+        color: #4A4A4A !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
     }
     
     /* CTA Section */
