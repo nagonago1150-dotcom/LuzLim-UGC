@@ -50,10 +50,31 @@ body {
         rgba(248, 240, 232, 0.95) 30%,
         var(--background-light) 70%,
         var(--background-pink) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Mobile performance optimizations */
+    will-change: scroll-position;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+    body {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: var(--background-light);
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+    }
+    
+    /* Reduce animations on mobile */
+    *, *::before, *::after {
+        animation-duration: 0.3s !important;
+        animation-delay: 0s !important;
+        transition-duration: 0.2s !important;
+    }
+}
     margin: 0;
     padding: 0;
     width: 100%;
@@ -2227,12 +2248,21 @@ details[open] .faq-question::after {
     position: absolute;
     border-radius: 50%;
     background: linear-gradient(45deg, 
-        rgba(139, 69, 19, 0.08), 
-        rgba(205, 133, 63, 0.06));
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+        rgba(139, 69, 19, 0.04), 
+        rgba(205, 133, 63, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.05);
     animation: float 20s infinite ease-in-out;
+    will-change: transform;
+}
+
+/* Disable heavy effects on mobile */
+@media (max-width: 768px) {
+    .floating-circle {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        animation: none;
+        opacity: 0.3;
+    }
 }
 
 .floating-circle:nth-child(1) {
@@ -2299,7 +2329,7 @@ details[open] .faq-question::after {
     }
 }
 
-/* Enhanced body with dynamic elements */
+/* Enhanced body with dynamic elements - MOBILE OPTIMIZED */
 body::before {
     content: '';
     position: fixed;
@@ -2307,18 +2337,19 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.02) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(205, 133, 63, 0.015) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(139, 69, 19, 0.01) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.01) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(205, 133, 63, 0.008) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
-    animation: ambientShift 40s ease-in-out infinite;
+    will-change: auto;
 }
 
-@keyframes ambientShift {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    33% { opacity: 0.8; transform: scale(1.05); }
-    66% { opacity: 0.9; transform: scale(0.95); }
+/* Remove heavy animation on mobile */
+@media (max-width: 768px) {
+    body::before {
+        animation: none;
+        background: rgba(139, 69, 19, 0.005);
+    }
 }
 
 /* Bubble Effects */
@@ -2337,16 +2368,18 @@ body::before {
     position: absolute;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, 
-        rgba(255, 255, 255, 0.7) 0%, 
-        rgba(255, 255, 255, 0.4) 40%, 
-        rgba(255, 255, 255, 0.2) 100%);
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    box-shadow: 
-        inset 0 0 30px rgba(255, 255, 255, 0.4),
-        0 0 40px rgba(255, 255, 255, 0.3),
-        0 0 80px rgba(255, 255, 255, 0.15);
+        rgba(255, 255, 255, 0.3) 0%, 
+        rgba(255, 255, 255, 0.2) 40%, 
+        rgba(255, 255, 255, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    will-change: transform;
+}
+
+/* Hide bubbles on mobile for performance */
+@media (max-width: 768px) {
+    .bubble-container {
+        display: none;
+    }
 }
 
 .bubble-1 {
@@ -2488,6 +2521,13 @@ body::before {
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
+}
+
+/* Hide ripples on mobile for performance */
+@media (max-width: 768px) {
+    .ripple-container {
+        display: none;
+    }
 }
 
 .ripple {

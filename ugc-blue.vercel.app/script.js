@@ -179,17 +179,21 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(modalStyles);
     
-    // Intersection Observer for fade-in animations
+    // Mobile-optimized Intersection Observer
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -30px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                requestAnimationFrame(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                });
+                // Disconnect observer after animation to improve performance
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
